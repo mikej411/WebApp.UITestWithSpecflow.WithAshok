@@ -5,13 +5,13 @@ using WebApp.AppFramework;
 
 namespace WebApp.UITest.Tests
 {
-    //[BrowserMode(BrowserMode.New)]
+   //[BrowserMode(BrowserMode.New)]
     [LocalSeleniumTestFixture(BrowserNames.Chrome)]
-    [LocalSeleniumTestFixture(BrowserNames.Firefox)]
-    [LocalSeleniumTestFixture(BrowserNames.InternetExplorer)]
-    [RemoteSeleniumTestFixture(BrowserNames.Chrome)]
-    [RemoteSeleniumTestFixture(BrowserNames.Firefox)]
-    [RemoteSeleniumTestFixture(BrowserNames.InternetExplorer)]
+    //[LocalSeleniumTestFixture(BrowserNames.Firefox)]
+    //[LocalSeleniumTestFixture(BrowserNames.InternetExplorer)]
+   // [RemoteSeleniumTestFixture(BrowserNames.Chrome)]
+    //[RemoteSeleniumTestFixture(BrowserNames.Firefox)]
+    //[RemoteSeleniumTestFixture(BrowserNames.InternetExplorer)]
     [TestFixture]
     public class SampleTests : EATestBase
     {

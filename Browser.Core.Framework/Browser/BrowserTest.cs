@@ -24,7 +24,7 @@ namespace Browser.Core.Framework
     /// Base class for all Selenium tests.  Handles setup and configuration to run tests against multiple
     /// web browsers (Chrome, Firefox, IE).
     /// </summary>
-	public abstract class BrowserTest
+	public class BrowserTest
     {
         #region Private Fields
 
@@ -76,7 +76,7 @@ namespace Browser.Core.Framework
         /// Gets the browser for the current test.  You can specify whether to re-use an existing browser instance or force a new
         /// browser instance by applying the BrowserModeAttribute to the test method or test class.
         /// </summary>        
-        public IWebDriver Browser { get; private set; }
+        public IWebDriver Browser { get; set; }
 
         /// <summary>
         /// The name of the browser to use for this test.
@@ -141,12 +141,12 @@ namespace Browser.Core.Framework
         [SetUp]
         public virtual void TestSetup()
         {
-            var context = TestContext.CurrentContext;
-            var mode = GetBrowserMode();
-            _log.Info(TestSetupLogMessage(context));
+           // var context = TestContext.CurrentContext;
+            //var mode = GetBrowserMode();
+          //  _log.Info(TestSetupLogMessage(context));
             // Determine whether to create a new browser session or reuse the existing one
             // Only create a new session if it was explicitly requested, or if this is the first test.
-            if (Browser == null || mode == BrowserMode.New)
+            if (Browser == null )
             {
                 var sw = Stopwatch.StartNew();
 
@@ -180,9 +180,9 @@ namespace Browser.Core.Framework
         [TearDown]
         public virtual void TestTearDown()
         {
-            var context = TestContext.CurrentContext;
+          //  var context = TestContext.CurrentContext;
             _testStopwatch.Stop();
-            _log.Info(TestTeardownLogMessage(context, _testStopwatch.Elapsed));
+          //  _log.Info(TestTeardownLogMessage(context, _testStopwatch.Elapsed));
 
             LogAlertIfPresentAndDismiss();
 
@@ -199,10 +199,10 @@ namespace Browser.Core.Framework
                 _log.Info(msg);
             }
 
-            if (context.Result.Outcome.Status == TestStatus.Failed)
-            {
-                TakeScreenshot(context.Test);
-            }
+            //if (context.Result.Outcome.Status == TestStatus.Failed)
+            //{
+            //    TakeScreenshot(context.Test);
+            //}
         }
 
         /// <summary>

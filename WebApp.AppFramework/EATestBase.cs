@@ -8,6 +8,7 @@ namespace WebApp.AppFramework
     /// Entending BrowserTest. Handles setup and configuration for all of selenium tests to run tests against multiple
     /// web browsers (Chrome, Firefox, IE).
     /// </summary>
+    
     public abstract class EATestBase : BrowserTest
     {
         public IWebDriver browser;
@@ -24,6 +25,7 @@ namespace WebApp.AppFramework
         /// <summary>
         /// Use this to override TestSetup in BrowserTest to perform setup logic that should occur before EVERY TEST. Can use TestTearDown also
         /// </summary>
+       
         public override void TestSetup()
         {
             base.TestSetup();
